@@ -1557,6 +1557,7 @@ class HTTP11ClientProtocol(Protocol):
         try:
             self._parser.dataReceived(bytes)
         except:
+            log.err(None, 'HTTP1.1 client exception on dataReceived.')
             self._giveUp(Failure())
 
 
